@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="accent">#58A6FF</color>
+    <color name="bg">#0E0F11</color>
+    <color name="card">#1B1D21</color>
+    <color name="text">#E8EAED</color>
+    <color name="text_secondary">#9AA0A8</color>
+    <color name="tablet">#2F3238</color>
+    <color name="tablet_edge">#5A5E68</color>
+    <color name="ok">#3FB950</color>
+    <color name="warn">#E3A23B</color>
+    <color name="grid">#33FFFFFF</color>
+    <color name="canvas_bg">#141518</color>
+</resources>

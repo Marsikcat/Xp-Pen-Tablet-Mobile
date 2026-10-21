@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="24dp">
+
+        <TextView
+            style="@style/Title"
+            android:text="@string/app_name" />
+
+        <!-- Состояние -->
+        <LinearLayout style="@style/Card">
+
+            <TextView
+                style="@style/CardTitle"
+                android:text="@string/card_status" />
+
+            <TextView
+                android:id="@+id/tabletStatus"
+                style="@style/Body" />
+
+            <TextView
+                android:id="@+id/driverStatus"
+                style="@style/Body"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/startHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/Hint"
+                    android:text="@string/start_hint" />
+
+                <TextView
+                    android:id="@+id/startCommand"
+                    style="@style/Mono" />
+
+                <Button
+                    android:id="@+id/copyCommand"
+                    style="@style/FlatButton"
+                    android:text="@string/copy_command" />
+            </LinearLayout>
+
+            <Switch
+                android:id="@+id/enabled"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:minHeight="48dp"
+                android:text="@string/enabled"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <!-- Область -->
+        <LinearLayout style="@style/Card">
+
+            <TextView
+                style="@style/CardTitle"
+                android:text="@string/card_area" />
+
+            <Switch
+                android:id="@+id/followRotation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="@string/follow_rotation"
+                android:textSize="15sp" />
+
+            <RadioGroup
+                android:id="@+id/orientationTabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/tabPortrait"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:minHeight="48dp"
+                    android:text="@string/tab_portrait" />
+
+                <RadioButton
+                    android:id="@+id/tabLandscape"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:minHeight="48dp"
+                    android:text="@string/tab_landscape" />
+            </RadioGroup>
+
+            <TextView
+                style="@style/Label"
+                android:text="@string/rotation" />
+
+            <RadioGroup
+                android:id="@+id/rotation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rot0"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:minHeight="48dp"
+                    android:text="0°" />
+
+                <RadioButton
+                    android:id="@+id/rot90"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:minHeight="48dp"
+                    android:text="90°" />
+
+                <RadioButton
+                    android:id="@+id/rot180"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:minHeight="48dp"
+                    android:text="180°" />
+
+                <RadioButton
+                    android:id="@+id/rot270"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:minHeight="48dp"
+                    android:text="270°" />
+            </RadioGroup>
+
+            <TextView
+                style="@style/Hint"
+                android:text="@string/rotation_hint" />
+
+            <TextView
+                style="@style/Label"
+                android:text="@string/area_mode" />
+
+            <RadioGroup
+                android:id="@+id/areaMode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/modeFit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:text="@string/mode_fit" />
+
+                <RadioButton
+                    android:id="@+id/modeFull"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:text="@string/mode_full" />
+
+                <RadioButton
+                    android:id="@+id/modeCustom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:text="@string/mode_custom" />
+            </RadioGroup>
+
+            <com.neon.xppen.ui.TabletAreaView
+                android:id="@+id/tabletArea"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/areaInfo"
+                style="@style/Hint"
+                android:gravity="center_horizontal" />
+
+            <LinearLayout
+                android:id="@+id/customControls"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/Hint"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/area_custom_hint" />
+
+                <CheckBox
+                    android:id="@+id/keepAspect"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:text="@string/keep_aspect" />
+
+                <Button
+                    android:id="@+id/areaReset"
+                    style="@style/FlatButton"
+                    android:text="@string/area_reset" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Нажим -->
+        <LinearLayout style="@style/Card">
+
+            <TextView
+                style="@style/CardTitle"
+                android:text="@string/card_pressure" />
+
+            <com.neon.xppen.ui.PressureCurveView
+                android:id="@+id/curve"
+                android:layout_width="match_parent"
+                android:layout_height="220dp" />
+
+            <TextView
+                style="@style/Hint"
+                android:layout_marginTop="4dp"
+                android:text="@string/curve_hint" />
+
+            <TextView
+                android:id="@+id/gammaLabel"
+                style="@style/Label" />
+
+            <SeekBar
+                android:id="@+id/gamma"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="200"
+                android:minHeight="40dp" />
+
+            <TextView
+                android:id="@+id/minLabel"
+                style="@style/Label" />
+
+            <SeekBar
+                android:id="@+id/min"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="30"
+                android:minHeight="40dp" />
+
+            <TextView
+                android:id="@+id/maxLabel"
+                style="@style/Label" />
+
+            <SeekBar
+                android:id="@+id/max"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="60"
+                android:minHeight="40dp" />
+
+            <Button
+                android:id="@+id/pressureReset"
+                style="@style/FlatButton"
+                android:text="@string/pressure_reset" />
+        </LinearLayout>
+
+        <!-- Проверка -->
+        <LinearLayout style="@style/Card">
+
+            <TextView
+                style="@style/CardTitle"
+                android:text="@string/card_test" />
+
+            <TextView
+                android:id="@+id/testInfo"
+                style="@style/Hint"
+                android:text="@string/test_hint" />
+
+            <com.neon.xppen.ui.TestCanvasView
+                android:id="@+id/testCanvas"
+                android:layout_width="match_parent"
+                android:layout_height="340dp"
+                android:layout_marginTop="8dp" />
+
+            <Button
+                android:id="@+id/testClear"
+                style="@style/FlatButton"
+                android:text="@string/test_clear" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/Hint"
+            android:gravity="center_horizontal"
+            android:padding="8dp"
+            android:text="@string/unofficial" />
+    </LinearLayout>
+</ScrollView>
